@@ -8,32 +8,33 @@
     <title>PokeVueApp</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="app">
         <h1 class="display-4 text-center text-danger">Pokedex</h1>
         <hr>
     
                 <form class="form-inline col-8 offset-3">
-                <label class="form-control mr-sm-2 for="">Coloca el ID del pokemon: </label>
-                  <input class="form-control mr-sm-2 " type="number" min="1" value="1" >
-                  <button class="btn btn-success my-2 my-sm-0" type="submit">Cargar datos</button>
+                <label class="form-control mr-sm-2 ">Coloca el ID del pokemon: </label>
+                  <input class="form-control mr-sm-2 " type="number" min="1" value="1" v-model="search">
+                  <button class="btn btn-success my-2 my-sm-0" type="submit" v-on:click="getPokemon">Cargar datos</button>
                 </form>
                 <br>
                 <br>
 
                 <div class="card bg-light text-center col-4 offset-4">
-                        <div class="card-header">Header</div>
+                        <div class="card-header" >{{ pokemon.name }}</div>
                         <div class="card-body">
+                                <img :src="pokemon.sprites.front_default" >
                           
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          
                         </div>
               
     </div>
     
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
-    <script src="./js/axios.js"></script>
-    <script src="./js/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- <script src="./js/axios.js"></script>
+    <script src="./js/vue.min.js"></script> -->
     <script src="./js/App.js"></script>
 </body>
 </html>
